@@ -1,0 +1,34 @@
+post release:
+- better timer code that allows for unidentifiable timers (the ones that are just created and never referenced)
+- change UI behaviour (make it possible for UI to be disabled and the game's behaviour not to change) currently the game is UI dependent 
+- make health visible below the player
+- move back player sprite on shoot
+- timed speed booster affectable item
+- timed money booster affectable item
+- bosses
+- polish the shop (maybe add short image descriptions to buttons?)
+- add hitStop effects when hit enemy
+- add a Time.timeScale controller script
+
+
+
+DONE:
+- make money visible in shop
+- add icons to UI elements
+- add a proper death screen when you don't have money for new upgrades
+- add another parallax layer to the background (planets maybe?)
+- better enemy AI to avoid them clumping together
+- add last shop upgrade
+- experiment with glow objects
+- sound
+- enhanced graphics a lil bit
+- add a proper main menu to the game (re-spawn style)
+- add a ui camera to disable pp effects on the interface
+- add gameover sound
+- upgrades are available sound
+- check if music loops correctly
+- remake random gen
+- make social media buttons make a new browser tab
+- make background particle effect
+- pausing can't be on esc
+- turn off debug stuff

@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Affectable
+  - Enemy
+  - PlayerCollision
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - PostProcess
+  - Water
+  - UI
+  - Affector
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2147708111
+    locked: 0
+  - name: Elements
+    uniqueID: 2328765453
+    locked: 0
+  - name: Player
+    uniqueID: 45338283
+    locked: 0
+  - name: Particles
+    uniqueID: 1415700199
+    locked: 0
+  - name: UI
+    uniqueID: 2931020159
+    locked: 0
+  - name: ShopUI
+    uniqueID: 4028130427
+    locked: 0
+  - name: PauseUI
+    uniqueID: 4123257009
+    locked: 0
+  - name: PersistentUI
+    uniqueID: 1147007187
+    locked: 0
+  - name: Cursor
+    uniqueID: 3262304133
+    locked: 0
