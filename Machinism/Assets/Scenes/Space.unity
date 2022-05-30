@@ -5853,7 +5853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -124.6599
+      value: -151
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6171,7 +6171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 166.12737
+      value: 139.78726
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6285,8 +6285,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1147007187
-  m_SortingOrder: 0
+  m_SortingLayerID: -171710287
+  m_SortingOrder: -10
   m_TargetDisplay: 0
 --- !u!224 &318469192
 RectTransform:
@@ -7311,7 +7311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -124.59552
+      value: -150.93562
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7659,7 +7659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -124.6599
+      value: -151
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8024,10 +8024,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Buy an upgrade to rebuild the ship!
-
-    You can only buy one upgrade
-    at a time.'
+  m_text: "Each time you die\n you can buy an upgrade\n but only one at a time!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: eb4739217934ece4cb20a9e0ec2087d9, type: 2}
   m_sharedMaterial: {fileID: 7650358902865518271, guid: eb4739217934ece4cb20a9e0ec2087d9, type: 2}
@@ -10466,7 +10463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.12749
+      value: 140.78738
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12502,7 +12499,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167.12749
+      value: 140.78738
       objectReference: {fileID: 0}
     - target: {fileID: 5199581634302575430, guid: e0bdb47a09abee741b33f74d465a40bd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12871,7 +12868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -373.97968}
+  m_AnchoredPosition: {x: 0, y: -427}
   m_SizeDelta: {x: 136.82, y: 65.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6633558815210742442
