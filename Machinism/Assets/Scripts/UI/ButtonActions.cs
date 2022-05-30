@@ -15,6 +15,7 @@ public class ButtonActions : MonoBehaviour
 
 	private void ResetValues()
 	{
+		SpaceshipHealth.maxHealth = 3;
 		SpaceshipHealth.OnDeath = null;
 		SpaceshipHealth.OnRefil = null;
 		Money.Remove(Money.value);

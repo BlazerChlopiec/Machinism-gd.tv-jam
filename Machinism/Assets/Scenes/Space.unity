@@ -12207,6 +12207,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 3465425052119373349, guid: d890b90bf370b2e468108e67a9b81fc5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3465425052425194951, guid: d890b90bf370b2e468108e67a9b81fc5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d890b90bf370b2e468108e67a9b81fc5, type: 3}
 --- !u!1001 &5199581633683360311
@@ -12578,6 +12586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 909491708, guid: 93e878c4974a28a4a8f473ad7a7bc14f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5805307610805020562, guid: 93e878c4974a28a4a8f473ad7a7bc14f, type: 3}
       propertyPath: m_RootOrder
       value: 2
