@@ -1,6 +1,18 @@
+TODO:
+- change UI behaviour (make it possible for UI to be disabled and the game's behaviour not to change) currently the game is UI dependent 
+  to do it add a standalone money script and remake the UIText script
+
+Android port:
+- visual joystick movement
+- visible pause button
+- auto shoot
+- make a using breaks visible button
+- add gem currecy (added for killing specific enemies, surviving for a long time or getting an achievement)
+- add cloud saving
+- add a gem currency shop (customization purposes - colors, strobe lights, laser light, shoot origins, patterns)
+
 post release:
 - better timer code that allows for unidentifiable timers (the ones that are just created and never referenced)
-- change UI behaviour (make it possible for UI to be disabled and the game's behaviour not to change) currently the game is UI dependent 
 - make health visible below the player
 - move back player sprite on shoot
 - timed speed booster affectable item

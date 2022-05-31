@@ -516,6 +516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionFadeOut
       objectReference: {fileID: 0}
+    - target: {fileID: 5771427753255073095, guid: 49d92fc2f317f09418a5898c38dd7da1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5771427753255073117, guid: 49d92fc2f317f09418a5898c38dd7da1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
