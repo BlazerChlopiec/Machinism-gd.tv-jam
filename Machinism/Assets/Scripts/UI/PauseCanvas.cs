@@ -1,42 +1,29 @@
 using System;
 using UnityEngine;
 
-public class PauseCanvas : MonoBehaviour
+public class PauseCanvas : DynamicCanvas
 {
-	public GameObject pauseContainer;
-
-	public Transform inGameTimer;
-
-
-	private void Start()
-	{
-		pauseContainer.SetActive(false);
-	}
-
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Tab))
 		{
-			if (!pauseContainer.activeInHierarchy) Pause();
-			else Resume();
+			Toggle();
 		}
 	}
 
-	private void Resume()
+	public override void Close()
 	{
-		Time.timeScale = prevTimescale;
-		pauseContainer.SetActive(false);
+		base.Close();
 
-		if (inGameTimer != null) inGameTimer.SetParent(GameObject.Find("GameCanvas").transform);
+		Time.timeScale = prevTimescale;
 	}
 
 	float prevTimescale;
-	private void Pause()
+	public override void Open()
 	{
+		base.Open();
+
 		prevTimescale = Time.timeScale;
 		Time.timeScale = 0;
-		pauseContainer.SetActive(true);
-
-		if (inGameTimer != null) inGameTimer.SetParent(GameObject.Find("PersistentCanvas").transform);
 	}
 }

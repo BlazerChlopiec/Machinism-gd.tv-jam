@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 using UnityEngine.EventSystems;
 
-public class OpenURLOnPress : MonoBehaviour, IPointerDownHandler
+public class OpenURLOnPointerDown : MonoBehaviour, IPointerDownHandler
 {
 	[SerializeField] private string URL;
 
@@ -21,6 +21,6 @@ public class OpenURLOnPress : MonoBehaviour, IPointerDownHandler
 	private static void OpenPCBuild(string url) => Application.OpenURL(url);
 
 
-	[DllImport("__Internal")]
-	private static extern void openWindow(string url);
+
+	[DllImport("__Internal")] private static extern void openWindow(string url);
 }

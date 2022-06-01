@@ -10,7 +10,7 @@ public class RocketShip : EnemySpaceship
 		base.OnDeath();
 	}
 
-	public override IEnumerator Shoot(float shootFreq)
+	public override IEnumerator Shoot()
 	{
 		CreateProjectile();
 

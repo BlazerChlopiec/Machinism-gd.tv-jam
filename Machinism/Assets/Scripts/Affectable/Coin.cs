@@ -36,7 +36,7 @@ public class Coin : Affectable
 
 	public override void OnTouch()
 	{
-		Money.Add(10);
+		SpaceshipMoney.Add(10);
 
 		if (collectParticles) Instantiate(collectParticles, transform.position, Quaternion.identity);
 

@@ -1,16 +1,13 @@
 using EZCameraShake;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class SpaceshipCameraController : MonoBehaviour
 {
-	public Transform player;
 	public Camera cam { get; private set; }
 	public CameraShaker shaker { get; private set; }
 
-	[SerializeField] private float minSize;
-	[SerializeField] private float maxSize;
+	[SerializeField] private float minSize = 8;
+	[SerializeField] private float maxSize = 13;
 
 	Spaceship spaceship;
 
@@ -25,9 +22,9 @@ public class CameraController : MonoBehaviour
 	{
 		if (spaceship != null && !spaceship.isDead)
 		{
-			Vector3 target = Vector2.Lerp(transform.position, player.position, 10 * Time.deltaTime);
-			target.z = -10;
-			transform.position = target;
+			Vector3 modifiedTarget = Vector2.Lerp(transform.position, spaceship.transform.position, 10 * Time.deltaTime);
+			modifiedTarget.z = -10;
+			transform.position = modifiedTarget;
 		}
 	}
 

@@ -21,7 +21,7 @@ namespace MyDebug
 				Time.timeScale = 1;
 				SpaceshipHealth.OnDeath = null;
 				SpaceshipHealth.OnRefil = null;
-				Money.Remove(Money.value);
+				SpaceshipMoney.Remove(SpaceshipMoney.value);
 			}
 
 			foreach (var changes in sceneChanges)

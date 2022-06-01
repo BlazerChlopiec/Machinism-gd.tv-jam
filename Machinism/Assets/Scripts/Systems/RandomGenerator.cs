@@ -37,7 +37,7 @@ namespace RandomGenerator
 			if (spaceship != null)
 			{
 				transform.position = spaceship.transform.position;
-				rotatedElements.rotation = spaceship.sprite.transform.rotation;
+				rotatedElements.rotation = spaceship.rotatedElements.transform.rotation;
 			}
 
 			//managing timeOverrides 

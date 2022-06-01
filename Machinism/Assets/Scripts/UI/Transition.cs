@@ -12,8 +12,17 @@ public class Transition : MonoBehaviour
 
 	public void ChangeScene()
 	{
-		if (OnChangeScene != null) OnChangeScene();
-		Time.timeScale = 1;
+		OnChangeScene += ResetValuesOnSceneSwitch;
+		OnChangeScene();
 		SceneManager.LoadScene(sceneName);
+	}
+
+	private void ResetValuesOnSceneSwitch()
+	{
+		Time.timeScale = 1;
+		SpaceshipHealth.maxHealth = 3;
+		SpaceshipHealth.OnDeath = null;
+		SpaceshipHealth.OnRefil = null;
+		SpaceshipMoney.Remove(SpaceshipMoney.value);
 	}
 }

@@ -29,7 +29,7 @@ public class UpgradeButton : MonoBehaviour
 		{
 			button.interactable = false;
 		}
-		else if (Money.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
+		else if (SpaceshipMoney.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
 		{
 			button.interactable = false;
 		}
@@ -46,7 +46,7 @@ public class UpgradeButton : MonoBehaviour
 			text.text = "MAX";
 			return;
 		}
-		else if (Money.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
+		else if (SpaceshipMoney.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
 		{
 			text.text = levelTarget.levels[levelTarget.currentLevel].levelName + " - "
 					  + levelTarget.levels[levelTarget.currentLevel].cost + "$";
@@ -61,7 +61,7 @@ public class UpgradeButton : MonoBehaviour
 
 	public void Upgrade()
 	{
-		Money.Remove(levelTarget.levels[levelTarget.currentLevel].cost);
+		SpaceshipMoney.Remove(levelTarget.levels[levelTarget.currentLevel].cost);
 
 		var targetComponent = GetTargettedComponent();
 

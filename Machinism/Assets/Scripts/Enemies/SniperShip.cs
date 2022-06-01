@@ -30,11 +30,10 @@ public class SniperShip : EnemySpaceship
 		base.OnDeath();
 	}
 
-	public override IEnumerator Shoot(float shootFreq)
+	public override IEnumerator Shoot()
 	{
 		CreateProjectile();
-		yield return new WaitForSeconds(.8f);
 
-		yield return base.Shoot(shootFrequency - .8f);
+		return base.Shoot();
 	}
 }

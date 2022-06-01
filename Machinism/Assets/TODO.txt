@@ -1,15 +1,20 @@
 TODO:
-- change UI behaviour (make it possible for UI to be disabled and the game's behaviour not to change) currently the game is UI dependent 
-  to do it add a standalone money script and remake the UIText script
+- practically remove all static variables since its 1. bad practice 2. a shit solution
+- improve on the canvas sorting layers
+- wave count on screen
+- add a screen message system
+- make the shop message system cleaner
+- ignore input in game when clicked on UI
+- research a way to remove as much dependencies as possible
 
 Android port:
 - visual joystick movement
-- visible pause button
 - auto shoot
 - make a using breaks visible button
 - add gem currecy (added for killing specific enemies, surviving for a long time or getting an achievement)
 - add cloud saving
 - add a gem currency shop (customization purposes - colors, strobe lights, laser light, shoot origins, patterns)
+- check if all UI's scale correctly with different sizes
 
 post release:
 - better timer code that allows for unidentifiable timers (the ones that are just created and never referenced)
@@ -44,3 +49,8 @@ DONE:
 - make background particle effect
 - pausing can't be on esc
 - turn off debug stuff
+- remake invincibility frames (make a new scrip for it)
+- remake the yandere dev line (we all know what it is)
+- new money script (spaceshipmoney.cs)
+- change UI behaviour (make it possible for UI to be disabled and the game's behaviour not to change) currently the game is UI dependent 
+- pause button

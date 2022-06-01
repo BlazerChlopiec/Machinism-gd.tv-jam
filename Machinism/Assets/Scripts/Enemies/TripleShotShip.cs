@@ -14,7 +14,7 @@ public class TripleShotShip : EnemySpaceship
 		base.OnDeath();
 	}
 
-	public override IEnumerator Shoot(float shootFreq)
+	public override IEnumerator Shoot()
 	{
 		CreateProjectile();
 		yield return new WaitForSeconds(tripleShotInBetween);

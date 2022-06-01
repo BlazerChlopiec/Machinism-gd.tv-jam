@@ -2,21 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameOverCanvas : MonoBehaviour
+public class GameOverCanvas : DynamicCanvas
 {
-	public GameObject gameOverContainer;
-
-	public Transform inGameTimer;
-
-
-	private void Start() => gameOverContainer.SetActive(false);
-
-	public void Show()
+	public override void Open()
 	{
-		Time.timeScale = 0;
+		base.Open();
 
-		inGameTimer.SetParent(GameObject.Find("PersistentCanvas").transform);
-		gameOverContainer.SetActive(true);
+		Time.timeScale = 0;
 
 		AudioManager.instance.Play("GameOver");
 	}

@@ -6,8 +6,7 @@ using UnityEngine;
 public class Spaceship : MonoBehaviour
 {
 	Rigidbody2D rb;
-	CameraController cam;
-	public SpriteRenderer sprite;
+	SpaceshipCameraController cam;
 
 
 	[SerializeField] private float acceleration = 400f;
@@ -22,10 +21,7 @@ public class Spaceship : MonoBehaviour
 	public GameObject deathParticles;
 
 	Vector3 vel;
-	Color startColor;
 	public bool isDead;
-
-	bool isOnInvincibilityFrames;
 
 
 	private void Start()
@@ -35,9 +31,8 @@ public class Spaceship : MonoBehaviour
 		SpaceshipHealth.RefillHealth();
 
 		rb = GetComponent<Rigidbody2D>();
-		cam = FindObjectOfType<CameraController>();
+		cam = FindObjectOfType<SpaceshipCameraController>();
 
-		startColor = sprite.color;
 
 		firstFrameAccel = acceleration;
 	}
@@ -45,14 +40,11 @@ public class Spaceship : MonoBehaviour
 	private void Update()
 	{
 		rotatedElements.localScale = Vector2.one * spaceshipScale;
-		rotatedElements.transform.LookAtMouseSmoothly(smoothT: 20);
+
+		//	RotateToMouse();
+		RotateToJoystick();
+
 		cam.DynamicSize(rb.velocity);
-
-
-		if (Timers.IsUp("SpaceshipInvFrames") && isOnInvincibilityFrames)
-		{
-			OnInvincibilityFramesStop();
-		}
 
 		if (Input.GetKey(KeyCode.LeftShift)) hasStopped = true;
 		if (!Input.GetKey(KeyCode.LeftShift)) hasStopped = false;
@@ -66,6 +58,17 @@ public class Spaceship : MonoBehaviour
 		if (!hasStopped)
 		{
 			acceleration = firstFrameAccel;
+		}
+	}
+
+	private void RotateToMouse() => rotatedElements.transform.LookAtMouseSmoothly(smoothT: 20);
+	private void RotateToJoystick()
+	{
+		var inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+		if (inputVector != Vector2.zero)
+		{
+			var targetRotation = Quaternion.LookRotation(Vector3.forward, inputVector);
+			rotatedElements.transform.rotation = Quaternion.Slerp(rotatedElements.transform.rotation, targetRotation, 20 * Time.deltaTime);
 		}
 	}
 
@@ -94,33 +97,24 @@ public class Spaceship : MonoBehaviour
 
 		CameraShaker.Instance.ShakeOnce(6f, 8, 0, 1);
 
+
+		//
+		DynamicCanvas targetCanvas; // the canvas that is going to be turned on
+
+		//determine the targetCanvas
 		var shopCanvas = FindObjectOfType<ShopCanvas>();
-		if (shopCanvas.HasAnyMoreUpgrades()) shopCanvas.Invoke("OpenShop", .5f);
-		else
-		{
-			var gameOverCanvas = FindObjectOfType<GameOverCanvas>();
-			gameOverCanvas.Invoke("Show", .5f);
-		}
+		if (shopCanvas.HasAvailableUpgrades()) targetCanvas = shopCanvas;
+		else targetCanvas = FindObjectOfType<GameOverCanvas>();
+		//
+
+		//finally open the targetCanvas
+		targetCanvas.Invoke("Open", .5f);
+		//
 	}
 
 	private void OnRefil()
 	{
 		if (rotatedElements != null) rotatedElements.gameObject.SetActive(true);
 		isDead = false;
-	}
-
-	public void OnInvincibilityFramesStart()
-	{
-		isOnInvincibilityFrames = true;
-
-		var col = sprite.color;
-		col.a = .3f;
-		sprite.color = col;
-	}
-
-	public void OnInvincibilityFramesStop()
-	{
-		isOnInvincibilityFrames = false;
-		sprite.color = startColor;
 	}
 }

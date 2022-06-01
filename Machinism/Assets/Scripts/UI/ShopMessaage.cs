@@ -42,7 +42,7 @@ public class ShopMessaage : MonoBehaviour
 
 	private void Update()
 	{
-		if (Money.value >= cheapestTier && !hasShownMessage)
+		if (SpaceshipMoney.value >= cheapestTier && !hasShownMessage)
 		{
 			hasShownMessage = true;
 			ShowMessage("Upgrades are available!");

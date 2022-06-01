@@ -1,5 +1,1 @@
-using UnityEngine;
-
-public class HealthUIText : UIText
-{
-}
+public class HealthUIText : UIText { }

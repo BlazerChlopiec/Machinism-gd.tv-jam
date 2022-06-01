@@ -34,12 +34,8 @@ public class EnemySpaceship : Enemy
 			transform.position = Vector2.Lerp(transform.position, spaceship.transform.position, .3f * Time.deltaTime);
 	}
 
-	public virtual IEnumerator Shoot(float shootFrequency = 0)
+	public virtual IEnumerator Shoot()
 	{
-		// yandere dev LMAO
-		// if the custom shootFrequency is 0 then its replaced by the inspector shootFrequency value
-		if (shootFrequency == 0) shootFrequency = this.shootFrequency;
-
 		yield return new WaitForSeconds(shootFrequency);
 		StartCoroutine(Shoot());
 	}
