@@ -8,13 +8,18 @@ public class Spaceship : MonoBehaviour
 	Rigidbody2D rb;
 	SpaceshipCameraController cam;
 
+	//mobile
+	FixedJoystick joystick;
+	BreaksButton breaksButton;
+	//
+
 
 	[SerializeField] private float acceleration = 400f;
 	[SerializeField] private float maxVelocity = 8;
 	public float spaceshipScale = 1;
 
 	private float firstFrameAccel;
-	private bool hasStopped;
+	private bool breaksInput;
 
 	public Transform rotatedElements; // basically the first child
 
@@ -32,6 +37,8 @@ public class Spaceship : MonoBehaviour
 
 		rb = GetComponent<Rigidbody2D>();
 		cam = FindObjectOfType<SpaceshipCameraController>();
+		joystick = FindObjectOfType<FixedJoystick>();
+		breaksButton = FindObjectOfType<BreaksButton>();
 
 
 		firstFrameAccel = acceleration;
@@ -41,21 +48,28 @@ public class Spaceship : MonoBehaviour
 	{
 		rotatedElements.localScale = Vector2.one * spaceshipScale;
 
-		//	RotateToMouse();
-		RotateToJoystick();
+		if (SystemInfo.deviceType == DeviceType.Desktop)
+		{
+			RotateToMouse();
+
+			breaksInput = Input.GetKey(KeyCode.LeftShift);
+		}
+		if (SystemInfo.deviceType == DeviceType.Handheld)
+		{
+			RotateToJoystick();
+
+			breaksInput = breaksButton.pressed;
+		}
 
 		cam.DynamicSize(rb.velocity);
 
-		if (Input.GetKey(KeyCode.LeftShift)) hasStopped = true;
-		if (!Input.GetKey(KeyCode.LeftShift)) hasStopped = false;
-
-		if (hasStopped)
+		if (breaksInput)
 		{
 			acceleration = 0;
 			vel = Vector2.Lerp(vel, Vector2.zero, 4 * Time.deltaTime);
 		}
 
-		if (!hasStopped)
+		if (!breaksInput)
 		{
 			acceleration = firstFrameAccel;
 		}
@@ -64,12 +78,8 @@ public class Spaceship : MonoBehaviour
 	private void RotateToMouse() => rotatedElements.transform.LookAtMouseSmoothly(smoothT: 20);
 	private void RotateToJoystick()
 	{
-		var inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-		if (inputVector != Vector2.zero)
-		{
-			var targetRotation = Quaternion.LookRotation(Vector3.forward, inputVector);
-			rotatedElements.transform.rotation = Quaternion.Slerp(rotatedElements.transform.rotation, targetRotation, 20 * Time.deltaTime);
-		}
+		var joystickAxes = new Vector2(joystick.Horizontal, joystick.Vertical);
+		if (joystickAxes != Vector2.zero) rotatedElements.transform.rotation = Utils.AxesToZRotSmoothed(rotatedElements.transform.rotation, joystickAxes);
 	}
 
 	private void FixedUpdate()

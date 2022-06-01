@@ -11,14 +11,14 @@ public class OpenURLOnPointerDown : MonoBehaviour, IPointerDownHandler
 
 	public static void OpenLink(string url)
 	{
-#if !UNITY_EDITOR && UNITY_WEBGL
+#if !UNITY_EDITOR && UNITY_WEBGL // WEBGL NEEDS A SPECIAL WAY OF OPENING LINKS
 		openWindow(url);
-#elif UNITY_2017_1_OR_NEWER
-		OpenPCBuild(url);
+#elif UNITY_2017_1_OR_NEWER // EVERY OTHER SCENARIO JUST OPENS NORMALLY
+		OpenStandardLink(url);
 #endif
 	}
 
-	private static void OpenPCBuild(string url) => Application.OpenURL(url);
+	private static void OpenStandardLink(string url) => Application.OpenURL(url);
 
 
 

@@ -6,7 +6,12 @@ public class PlayerProjectile : Projectile
 	{
 		base.Start();
 
-		sprite.transform.LookAtMouse();
+		if (SystemInfo.deviceType == DeviceType.Desktop) sprite.transform.LookAtMouse();
+		if (SystemInfo.deviceType == DeviceType.Handheld)
+		{
+			var spaceship = FindObjectOfType<Spaceship>();
+			sprite.transform.rotation = spaceship.rotatedElements.rotation;
+		}
 	}
 
 	protected override void OnHitTarget(Collider2D target)

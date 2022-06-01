@@ -6,6 +6,11 @@ TODO:
 - make the shop message system cleaner
 - ignore input in game when clicked on UI
 - research a way to remove as much dependencies as possible
+- rework the shop message
+- the shop messege is not correctly displayed
+- fix the main menu bug where you can't set a camera to the canvas or it stops rendering 
+- destroy when not seen on big objects just isn't practical
+- check if everything is frame independent
 
 Android port:
 - visual joystick movement
