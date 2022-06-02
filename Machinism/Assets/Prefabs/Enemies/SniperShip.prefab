@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6563123868190342013}
   - component: {fileID: 4735844543516557146}
   - component: {fileID: 3719242350321366699}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SniperShip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 8127175546935255945}
   - component: {fileID: 4974036122205969150}
   - component: {fileID: 5735201129996927956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 5e4b292ec37bb6d4d96615365fae5ae2, type: 3}
-  m_Color: {r: 1, g: 0.3443396, b: 0.3443396, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.1254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4989848942557693647}
   - component: {fileID: 1099107350129663466}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.9725491, g: 0.3372549, b: 0.36862746, a: 0.5529412}
+      key0: {r: 1, g: 0, b: 0.1254902, a: 0.5529412}
       key1: {r: 1, g: 0.1462264, b: 0.18311799, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -324,7 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4210326724844993187}
   - component: {fileID: 6264135132174847763}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,8 +416,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.40000004, b: 0.40000004, a: 1}
-      key1: {r: 1, g: 0.40000004, b: 0.40000004, a: 1}
+      key0: {r: 1, g: 0, b: 0.1254902, a: 1}
+      key1: {r: 1, g: 0, b: 0.1254902, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -461,7 +461,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2707700881284500939}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1467637245692249610}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RotatedElements
   m_TagString: Untagged
   m_Icon: {fileID: 0}

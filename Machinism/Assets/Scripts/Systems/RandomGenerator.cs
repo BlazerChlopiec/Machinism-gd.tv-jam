@@ -72,29 +72,30 @@ namespace RandomGenerator
 				if (Timers.IsUp(item.prefab.name)) // some random name to differentiate the Timers
 				{
 					Timers.New(item.prefab.name, item.currentTimeBetweenSpawns);
-					Instantiate(item.prefab, GetRandomPosInRandomRow(item.targetRow), Quaternion.identity);
+					Instantiate(item.prefab, GetChildPosInRandomRow(item.targetRow), Quaternion.identity);
 				}
 			}
 		}
 
-		private Vector3 GetRandomPosInRandomRow(Transform customTargetRow = null)
+		private Vector3 GetChildPosInRandomRow(Transform customTargetRow = null)
 		{
 			Transform targetRow;
+
+			// the item can exclude other rows and only leave one targetRow
 			if (customTargetRow == null) targetRow = rows.GetRandom();
 			else targetRow = customTargetRow;
 
-			List<Vector3> targetBounds = new List<Vector3>();
-
-
+			List<Vector3> childrenPos = new List<Vector3>();
 			foreach (Transform children in targetRow)
 			{
-				targetBounds.Add(children.position);
+				childrenPos.Add(children.position);
 			}
 
-			var index = UnityEngine.Random.Range(0, targetBounds.Count);
+			var index = UnityEngine.Random.Range(0, childrenPos.Count);
 
-			return new Vector2(UnityEngine.Random.Range(targetBounds[index].x, targetBounds[index].x),
-							   UnityEngine.Random.Range(targetBounds[index].y, targetBounds[index].y));
+			// draw a position from one random children
+			return new Vector2(UnityEngine.Random.Range(childrenPos[index].x, childrenPos[index].x),
+							   UnityEngine.Random.Range(childrenPos[index].y, childrenPos[index].y));
 		}
 	}
 

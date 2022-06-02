@@ -23,7 +23,7 @@ public class EnemySpaceship : Enemy
 
 	protected virtual void Update()
 	{
-		rotatedElements.LookAtObjectSmoothly(target: spaceship.transform);
+		rotatedElements.LookAtPosSmoothly(target: spaceship.transform.position);
 
 		MoveToPlayer();
 	}

@@ -21,15 +21,15 @@ public static class Extensions
 		transform.up = Vector3.Lerp(transform.up, direction, smoothT * Time.deltaTime);
 	}
 
-	public static void LookAtObjectSmoothly(this Transform transform, Transform target, float smoothT = 20)
+	public static void LookAtPosSmoothly(this Transform transform, Vector3 target, float smoothT = 20)
 	{
-		Vector2 direction = (target.position - transform.position).normalized;
+		Vector2 direction = (target - transform.position).normalized;
 		transform.up = Vector3.Lerp(transform.up, direction, smoothT * Time.deltaTime);
 	}
 
-	public static void LookAtObject(this Transform transform, Transform target)
+	public static void LookAtPos(this Transform transform, Vector3 target)
 	{
-		Vector2 direction = (target.position - transform.position).normalized;
+		Vector2 direction = (target - transform.position).normalized;
 		transform.up = direction;
 	}
 

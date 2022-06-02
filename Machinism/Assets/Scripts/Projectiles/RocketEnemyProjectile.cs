@@ -13,14 +13,14 @@ public class RocketEnemyProjectile : Projectile
 
 		spaceship = FindObjectOfType<Spaceship>();
 
-		sprite.transform.LookAtObject(spaceship.transform);
+		sprite.transform.LookAtPos(spaceship.transform.position);
 
 		Invoke(nameof(DestroyProjectile), timeToDestroy);
 	}
 
 	protected override void Update()
 	{
-		sprite.transform.LookAtObjectSmoothly(spaceship.transform, smoothT: 6);
+		sprite.transform.LookAtPosSmoothly(spaceship.transform.position, smoothT: 6);
 
 		base.Update();
 	}

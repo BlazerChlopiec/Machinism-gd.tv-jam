@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 614341963427435010}
   - component: {fileID: 4174482446534936239}
   - component: {fileID: 4230422964402840308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 399ef6d9755d72643b65a7760722263d, type: 3}
-  m_Color: {r: 0.28235295, g: 0.25490198, b: 0.59607846, a: 1}
+  m_Color: {r: 0.28235295, g: 0.18823531, b: 0.909804, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 614341964089662913}
   - component: {fileID: 5582275760848424993}
   - component: {fileID: 2090810874039771511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Meteor
   m_TagString: Enemy
   m_Icon: {fileID: 0}

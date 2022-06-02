@@ -1,37 +1,34 @@
 TODO:
-- practically remove all static variables since its 1. bad practice 2. a shit solution
+- practically remove all static variables since its 1. bad practice 2. a bad solution
 - improve on the canvas sorting layers
 - wave count on screen
-- add a screen message system
-- make the shop message system cleaner
-- ignore input in game when clicked on UI
 - research a way to remove as much dependencies as possible
-- rework the shop message
-- the shop messege is not correctly displayed
-- fix the main menu bug where you can't set a camera to the canvas or it stops rendering 
-- destroy when not seen on big objects just isn't practical
+- rework the shop message (the shop messege is not correctly displayed, maybe even add a new tweening library)
+- fix the main menu bug where you can't set a camera to the canvas or it stops rendering (so weird lmao have trouble fixing)
+- DestroyOnInvisible on on big objects with a lot of children just isn't practical
 - check if everything is frame independent
+- add the focus mechanic (using the breaks slows down all enemies on screen and their bullets)
+- make health visible below the player
+- polish the shop (maybe add short image descriptions to buttons?)
+- bosses (enemies that spawn after a certain time (ex. 5 mins) and disable other enemy spawns after they're destroyed they drop gem currency)
+
+Idk:
+- add hitStop effects when hit enemy
+- add a Time.timeScale controller script
+- timed speed booster affectable item
+- timed money booster affectable item
+
+Not needed:
+- ignore input in game when clicked on UI
 
 Android port:
-- visual joystick movement
-- auto shoot
-- make a using breaks visible button
 - add gem currecy (added for killing specific enemies, surviving for a long time or getting an achievement)
 - add cloud saving
 - add a gem currency shop (customization purposes - colors, strobe lights, laser light, shoot origins, patterns)
-- check if all UI's scale correctly with different sizes
 
-post release:
+Misc:
 - better timer code that allows for unidentifiable timers (the ones that are just created and never referenced)
-- make health visible below the player
 - move back player sprite on shoot
-- timed speed booster affectable item
-- timed money booster affectable item
-- bosses
-- polish the shop (maybe add short image descriptions to buttons?)
-- add hitStop effects when hit enemy
-- add a Time.timeScale controller script
-
 
 
 DONE:
@@ -59,3 +56,12 @@ DONE:
 - new money script (spaceshipmoney.cs)
 - change UI behaviour (make it possible for UI to be disabled and the game's behaviour not to change) currently the game is UI dependent 
 - pause button
+- add a third party color correction script to increase performance on mobile
+- make a fake vigneete sprite
+- made phone shooting
+- the player can shoot backwards if enemies get very close to the spaceship
+- fix the naming in the random gen system
+- visual joystick movement
+- auto shoot
+- make a using breaks visible button
+- check if all UI's scale correctly with different sizes

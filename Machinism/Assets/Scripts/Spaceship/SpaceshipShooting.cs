@@ -19,14 +19,34 @@ public class SpaceshipShooting : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetMouseButton(0) && Timers.IsUp("Shoot") && !spaceship.isDead)
+		if (SystemInfo.deviceType == DeviceType.Desktop)
 		{
-			Timers.New("Shoot", shootFrequency);
-			Shoot();
+			if (Input.GetMouseButton(0) && Timers.IsUp("Shoot") && !spaceship.isDead)
+			{
+				Timers.New("Shoot", shootFrequency);
+				Shoot();
+			}
+		}
+
+		else if (SystemInfo.deviceType == DeviceType.Handheld)
+		{
+			var mobileShootAccuracy = 5f;
+			var maxDistance = 20f;
+
+			// the position ensures that the cast starts in front of the ship (so you can't shoot backwards when someone gets close to the back)
+			var hit = Physics2D.CircleCast(transform.position + spaceship.rotatedElements.transform.up * mobileShootAccuracy,
+										   mobileShootAccuracy, spaceship.rotatedElements.transform.up,
+										   maxDistance, LayerMask.GetMask("Enemy"));
+
+			if (hit && Timers.IsUp("Shoot") && !spaceship.isDead) // sphere cast until hits enemy
+			{
+				Timers.New("Shoot", shootFrequency);
+				Shoot(hit.point);
+			}
 		}
 	}
 
-	private void Shoot()
+	private void Shoot(Vector2 customProjectileDir = default(Vector2))
 	{
 		if (Time.timeScale == 0) return;
 
@@ -34,7 +54,8 @@ public class SpaceshipShooting : MonoBehaviour
 		MoveShootOriginIndex(out currentShootOrigin);
 
 		var proj = Instantiate(projectile, currentShootOrigin.position, Quaternion.identity);
-		proj.GetComponent<Projectile>().speed = projectileSpeed;
+		proj.GetComponent<PlayerProjectile>().speed = projectileSpeed;
+		if (customProjectileDir != Vector2.zero) proj.GetComponent<PlayerProjectile>().customDirection = customProjectileDir;
 		proj.transform.localScale = Vector3.one * projectileSize;
 
 		//shoot particles

@@ -10,7 +10,7 @@ public class TripleShotEnemyProjectile : Projectile
 
 		spaceship = FindObjectOfType<Spaceship>();
 
-		sprite.transform.LookAtObject(spaceship.transform);
+		sprite.transform.LookAtPos(spaceship.transform.position);
 		MoveProjectile();
 	}
 

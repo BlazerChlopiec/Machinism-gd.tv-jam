@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5255656084984521603}
   - component: {fileID: 2364993418249326244}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 7175bbb23be10ec4fa5bc10f0944c7be, type: 3}
-  m_Color: {r: 1, g: 0.7128697, b: 0.2688679, a: 0.16470589}
+  m_Color: {r: 1, g: 0.6612143, b: 0.13679248, a: 0.25490198}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2805392547782936231}
   - component: {fileID: 1695298223973175818}
   - component: {fileID: 1503408633842955857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 399ef6d9755d72643b65a7760722263d, type: 3}
-  m_Color: {r: 1, g: 0.8091969, b: 0.2028302, a: 1}
+  m_Color: {r: 1, g: 0.7686275, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 2805392548195600740}
   - component: {fileID: 8264762057254609166}
   - component: {fileID: 3705433366837736914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GoldMeteor
   m_TagString: Enemy
   m_Icon: {fileID: 0}

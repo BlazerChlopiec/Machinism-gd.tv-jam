@@ -10,7 +10,7 @@ public class SniperEnemyProjectile : Projectile
 
 		spaceship = FindObjectOfType<Spaceship>();
 
-		sprite.transform.LookAtObject(spaceship.transform);
+		sprite.transform.LookAtPos(spaceship.transform.position);
 		MoveProjectile();
 	}
 

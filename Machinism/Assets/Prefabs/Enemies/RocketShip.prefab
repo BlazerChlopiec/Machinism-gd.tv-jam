@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6614712068917131177}
   - component: {fileID: 4711278077723980686}
   - component: {fileID: 716716445292850146}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RocketShip
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 8075320199005679453}
   - component: {fileID: 6379632320114434406}
   - component: {fileID: 6434644972143002643}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 5e4b292ec37bb6d4d96615365fae5ae2, type: 3}
-  m_Color: {r: 0.27058825, g: 0.78431374, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.85490197, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,7 +193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2687352022137405727}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4626170118864438546}
   - component: {fileID: 7967725946621970751}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,8 +316,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.3254902, g: 0.8352942, b: 1, a: 1}
-      key1: {r: 0.3254902, g: 0.8352942, b: 1, a: 1}
+      key0: {r: 0, g: 0.85098046, b: 1, a: 1}
+      key1: {r: 0, g: 0.854902, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -361,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1479102326064712414}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RotatedElements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
