@@ -9,10 +9,5 @@ public class FpsCounter : UIText
 		Application.targetFrameRate = 60;
 	}
 
-	protected override void ApplyValue()
-	{
-		base.ApplyValue();
-
-		field.text = (1f / Time.unscaledDeltaTime).ToString();
-	}
+	private void Update() => field.text = (1f / Time.unscaledDeltaTime).ToString();
 }

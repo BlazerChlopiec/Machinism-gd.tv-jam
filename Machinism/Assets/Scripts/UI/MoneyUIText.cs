@@ -1,1 +1,4 @@
-public class MoneyUIText : UIText { }
+public class MoneyUIText : UIText
+{
+	private void Update() => field.text = SpaceshipMoney.value.ToString() + "$";
+}

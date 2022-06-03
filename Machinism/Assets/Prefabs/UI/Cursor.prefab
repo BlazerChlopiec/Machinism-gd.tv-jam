@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1382106559839575075}
   - component: {fileID: 1382106559839575072}
   m_Layer: 5
-  m_Name: Image
+  m_Name: CursorImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,8 +145,8 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1032663163
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &1631805890576321417
 MonoBehaviour:

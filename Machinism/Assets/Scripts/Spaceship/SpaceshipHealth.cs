@@ -3,23 +3,16 @@ using UnityEngine;
 
 public class SpaceshipHealth : MonoBehaviour
 {
-	HealthUIText healthUIText;
 	static SpriteFlashEffect spriteFlash;
 
-	private static int health;
+	public static int health;
 	public static float maxHealth = 3; // has to be float to be upgraded in the shop
 
 	public static Action OnDeath;
 	public static Action OnRefil;
 
 
-	private void Start()
-	{
-		healthUIText = FindObjectOfType<HealthUIText>();
-		spriteFlash = GetComponentInChildren<SpriteFlashEffect>();
-	}
-
-	private void Update() => healthUIText.field.text = health.ToString();
+	private void Start() => spriteFlash = GetComponentInChildren<SpriteFlashEffect>();
 
 	public static void TakeDamage(int amount)
 	{
@@ -48,7 +41,6 @@ public class SpaceshipHealth : MonoBehaviour
 			health = 0;
 			AudioManager.instance.Play("PlayerDeath");
 			if (OnDeath != null) OnDeath();
-			//AudioManager.instance.Play("Death");
 		}
 	}
 }

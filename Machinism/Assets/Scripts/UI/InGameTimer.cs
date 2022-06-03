@@ -4,10 +4,8 @@ public class InGameTimer : UIText
 {
 	private float timeToDisplay;
 
-	protected override void ApplyValue()
+	private void Update()
 	{
-		base.ApplyValue();
-
 		timeToDisplay += Time.deltaTime;
 		float minutes = Mathf.FloorToInt(timeToDisplay / 60);
 		float seconds = Mathf.FloorToInt(timeToDisplay % 60);

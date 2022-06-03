@@ -41,7 +41,7 @@ public class SpaceshipShooting : MonoBehaviour
 			if (hit && Timers.IsUp("Shoot") && !spaceship.isDead) // sphere cast until hits enemy
 			{
 				Timers.New("Shoot", shootFrequency);
-				Shoot(hit.point);
+				Shoot(hit.transform.position);
 			}
 		}
 	}

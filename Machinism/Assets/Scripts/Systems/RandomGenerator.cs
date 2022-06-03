@@ -1,9 +1,8 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace RandomGenerator
+namespace RandomGeneration
 {
 	public class RandomGenerator : MonoBehaviour
 	{
@@ -14,11 +13,12 @@ namespace RandomGenerator
 		[Space(10)]
 		public List<RandomObjects> randomObjects;
 		[Space(10)]
-		public List<TimeOverride> timeOverrides;
+		public List<Wave> waves;
 		[Space(10)]
 
 
 		public Transform rotatedElements;
+		public Action OnNewWave;
 
 
 		private void Start()
@@ -40,27 +40,29 @@ namespace RandomGenerator
 				rotatedElements.rotation = spaceship.rotatedElements.transform.rotation;
 			}
 
-			//managing timeOverrides 
-			foreach (var timeOverride in timeOverrides)
+			//managing waves 
+			foreach (var wave in waves)
 			{
-				if (Time.timeSinceLevelLoad > timeOverride.triggerOnSeconds)
+				if (Time.timeSinceLevelLoad > wave.triggerOnSeconds && !wave.alreadyTriggered)
 				{
-					foreach (var statOverride in timeOverride.overrides)
-					{
-						if (!timeOverride.alreadyTriggered)
-						{
-							var target = randomObjects.Find(x => x.elementName == statOverride.elementName);
+					// the wave is triggered, now for the behaviour
+					if (OnNewWave != null) OnNewWave();
 
-							// apply new values
-							if (target != null)
-							{
-								target.currentTimeBetweenSpawns = statOverride.newTimeBetweenSpawns;
-								target.enabled = statOverride.enabled;
-							}
+					// managing the changes
+					foreach (var change in wave.changes)
+					{
+						var target = randomObjects.Find(x => x.elementName == change.elementName);
+
+						// apply new values
+						if (target != null)
+						{
+							target.currentTimeBetweenSpawns = change.newTimeBetweenSpawns;
+							target.enabled = change.enabled;
 						}
+
 					}
 
-					timeOverride.alreadyTriggered = true;
+					wave.alreadyTriggered = true;
 				}
 			}
 
@@ -119,15 +121,15 @@ namespace RandomGenerator
 	}
 
 	[Serializable]
-	public class TimeOverride
+	public class Wave
 	{
 		public float triggerOnSeconds;
-		public List<StatOverride> overrides;
+		public List<Changes> changes;
 		public bool alreadyTriggered;
 	}
 
 	[Serializable]
-	public class StatOverride
+	public class Changes
 	{
 		public string elementName = "element";
 		[Space(5)]
