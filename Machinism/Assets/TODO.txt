@@ -2,11 +2,10 @@ TODO:
 - practically remove all static variables since its 1. bad practice 2. a bad solution
 - improve on the canvas sorting layers
 - research a way to remove as much dependencies as possible
-- rework the shop message (the shop messege is not correctly displayed, maybe even add a new tweening library)
 - DestroyOnInvisible on on big objects with a lot of children just isn't practical
 - check if everything is frame independent
 - add the focus mechanic (using the breaks slows down all enemies on screen and their bullets)
-- make health visible below the player
+- make health visible below the player (kinda done / still doesn't disapper when died and feels unpolished, thinking about a healthText below the player not a slider)
 - polish the shop (maybe add short image descriptions to buttons?)
 - bosses (enemies that spawn after a certain time (ex. 5 mins) and disable other enemy spawns after they're destroyed they drop gem currency)
 - rework the main menu (on phone you probably dont use lmb to shoot lol)
@@ -69,3 +68,5 @@ DONE:
 - cursor became invisible after changing the canvas type to camera space (the problem was Z ordering)
 - the UI should look for the player not the player for UI (removing dependencies #1 lmao)
 - wave count on screen
+- tween the entire UI
+- rework the shop message (the shop messege is not correctly displayed, maybe even add a new tweening library)

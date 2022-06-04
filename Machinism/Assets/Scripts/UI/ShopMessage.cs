@@ -1,10 +1,12 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class ShopMessaage : MonoBehaviour
+public class ShopMessage : MonoBehaviour
 {
 	public GameObject messageContainer;
+
+	public RectTransform restPosition;
+	public RectTransform shownPosition;
 
 	[SerializeField] private LeanTweenType easing;
 
@@ -54,19 +56,19 @@ public class ShopMessaage : MonoBehaviour
 		messageContainer.SetActive(true);
 
 		text.text = message;
-		LeanTween.moveY(messageContainer.GetComponent<RectTransform>(), 5, .4f)
+
+		LeanTween.moveY(messageContainer.GetComponent<RectTransform>(), shownPosition.anchoredPosition.y, .4f)
 			.setEase(easing)
 			.setOnComplete(StartRepeating);
 
 		AudioManager.instance.Play("UpgradesAreAvailable");
 	}
 
-	private void StartRepeating() => StartCoroutine(Repeat());
+	private void StartRepeating() => Invoke(nameof(Repeat), 2f);
 
-	private IEnumerator Repeat()
+	private void Repeat()
 	{
-		yield return new WaitForSeconds(2);
-		LeanTween.moveY(messageContainer.GetComponent<RectTransform>(), -100, .4f)
+		LeanTween.moveY(messageContainer.GetComponent<RectTransform>(), restPosition.anchoredPosition.y, .4f)
 			.setEase(easing);
 	}
 }
