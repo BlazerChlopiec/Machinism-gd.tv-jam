@@ -63,11 +63,6 @@ public class UpgradeButton : MonoBehaviour
 	{
 		SpaceshipMoney.Remove(levelTarget.levels[levelTarget.currentLevel].cost);
 
-		// animation
-		LeanTween.scale(gameObject, Vector3.one * 3, 1f)
-			.setEasePunch()
-			.setIgnoreTimeScale(true);
-
 		var targetComponent = GetTargettedComponent();
 
 		FieldInfo field = Type.GetType(levelTarget.typeName).GetField(levelTarget.floatName);

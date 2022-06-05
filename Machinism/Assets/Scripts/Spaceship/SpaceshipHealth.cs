@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SpaceshipHealth : MonoBehaviour
 {
-	static SpriteFlashEffect spriteFlash;
+	static SpaceshipColors spaceshipColors;
 
 	public static int health;
 	public static float maxHealth = 3; // has to be float to be upgraded in the shop
@@ -12,14 +12,14 @@ public class SpaceshipHealth : MonoBehaviour
 	public static Action OnRefil;
 
 
-	private void Start() => spriteFlash = GetComponentInChildren<SpriteFlashEffect>();
+	private void Start() => spaceshipColors = GetComponentInChildren<SpaceshipColors>();
 
 	public static void TakeDamage(int amount)
 	{
 		if (Timers.IsUp("SpaceshipInvFrames"))
 		{
 			health -= amount;
-			spriteFlash.Flash();
+			spaceshipColors.Flash();
 
 			if (health <= 0)
 			{

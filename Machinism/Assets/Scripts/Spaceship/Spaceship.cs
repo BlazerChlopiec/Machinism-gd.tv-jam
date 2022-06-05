@@ -21,7 +21,8 @@ public class Spaceship : MonoBehaviour
 	private float firstFrameAccel;
 	private bool breaksInput;
 
-	public Transform rotatedElements; // basically the first child
+	public Transform rotatedElements;
+	public Transform disableOnDestroy;
 
 	public GameObject deathParticles;
 
@@ -46,6 +47,9 @@ public class Spaceship : MonoBehaviour
 
 	private void Update()
 	{
+
+
+		//smaller ship upgrades
 		rotatedElements.localScale = Vector2.one * spaceshipScale;
 
 		if (SystemInfo.deviceType == DeviceType.Desktop)
@@ -101,7 +105,7 @@ public class Spaceship : MonoBehaviour
 
 	private void OnDeath()
 	{
-		rotatedElements.gameObject.SetActive(false);
+		disableOnDestroy.gameObject.SetActive(false);
 		Instantiate(deathParticles, transform.position, Quaternion.identity);
 		isDead = true;
 
@@ -124,7 +128,7 @@ public class Spaceship : MonoBehaviour
 
 	private void OnRefil()
 	{
-		if (rotatedElements != null) rotatedElements.gameObject.SetActive(true);
+		if (rotatedElements != null) disableOnDestroy.gameObject.SetActive(true);
 		isDead = false;
 	}
 }

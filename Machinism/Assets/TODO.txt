@@ -4,14 +4,15 @@ TODO:
 - research a way to remove as much dependencies as possible
 - DestroyOnInvisible on on big objects with a lot of children just isn't practical
 - check if everything is frame independent
-- add the focus mechanic (using the breaks slows down all enemies on screen and their bullets)
-- make health visible below the player (kinda done / still doesn't disapper when died and feels unpolished, thinking about a healthText below the player not a slider)
 - polish the shop (maybe add short image descriptions to buttons?)
 - bosses (enemies that spawn after a certain time (ex. 5 mins) and disable other enemy spawns after they're destroyed they drop gem currency)
 - rework the main menu (on phone you probably dont use lmb to shoot lol)
 - rework the speed, size of bullets
+- implement the customization
+- make the meteors in the menu a particle system
 
 Idk:
+- add the focus mechanic (using the breaks slows down all enemies on screen and their bullets)
 - add hitStop effects when hit enemy
 - add a Time.timeScale controller script
 - timed speed booster affectable item
@@ -70,3 +71,4 @@ DONE:
 - wave count on screen
 - tween the entire UI
 - rework the shop message (the shop messege is not correctly displayed, maybe even add a new tweening library)
+- make health visible below the player (kinda done / still doesn't disapper when died and feels unpolished, thinking about a healthText below the player not a slider)

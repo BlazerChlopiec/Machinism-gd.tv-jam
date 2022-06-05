@@ -26,7 +26,7 @@ public class ShopCanvas : DynamicCanvas
 
 		Timers.New("SpaceshipInvFrames", 2);
 		SpaceshipHealth.RefillHealth();
-		FindObjectOfType<SpaceshipInvincibilityFrames>().OnInvincibilityFramesStart();
+		FindObjectOfType<SpaceshipColors>().OnInvincibilityFramesStart();
 	}
 
 	public void DisableAllUpgradeButtons()

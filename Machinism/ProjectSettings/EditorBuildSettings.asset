@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: 502f66f6bf96e564b972ad9e1d5972c0
   - enabled: 1
-    path: Assets/Scenes/Space.unity
+    path: Assets/Scenes/Survival.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: e6601a4ddab9e0e41a794bc4ef2f5c61
   m_configObjects: {}
