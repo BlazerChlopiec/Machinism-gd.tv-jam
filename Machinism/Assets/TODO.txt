@@ -11,6 +11,9 @@ TODO:
 - implement the customization
 - make the meteors in the menu a particle system
 
+- color script for enemies
+- rework sprite flash (make it work the same for the player and the enemies)
+
 Idk:
 - add the focus mechanic (using the breaks slows down all enemies on screen and their bullets)
 - add hitStop effects when hit enemy
@@ -72,3 +75,7 @@ DONE:
 - tween the entire UI
 - rework the shop message (the shop messege is not correctly displayed, maybe even add a new tweening library)
 - make health visible below the player (kinda done / still doesn't disapper when died and feels unpolished, thinking about a healthText below the player not a slider)
+- global color manager
+- color functionality for particle effects
+- add button extentions
+- added colorpick buttons

@@ -8,10 +8,8 @@ public class AudioManager : MonoSingleton<AudioManager>
 
 	public List<string> startSounds = new List<string>();
 
-	protected override void Awake()
+	protected void Start()
 	{
-		base.Awake();
-
 		foreach (var sound in sounds)
 		{
 			sound.source = gameObject.AddComponent<AudioSource>();
@@ -20,10 +18,7 @@ public class AudioManager : MonoSingleton<AudioManager>
 			UnityEditorInternal.InternalEditorUtility.SetIsInspectorExpanded(sound.source, false); // close inspector on initiation
 #endif
 		}
-	}
 
-	private void Start()
-	{
 		foreach (var name in startSounds)
 		{
 			Play(name);

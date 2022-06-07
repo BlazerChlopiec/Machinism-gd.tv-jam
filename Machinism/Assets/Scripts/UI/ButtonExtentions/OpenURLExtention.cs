@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Runtime.InteropServices;
 using UnityEngine.EventSystems;
 
-public class OpenURLOnPointerDown : MonoBehaviour, IPointerDownHandler
+public class OpenURLExtention : MonoBehaviour, IPointerDownHandler
 {
 	[SerializeField] private string URL;
 

@@ -14,4 +14,6 @@ public class Utils : MonoBehaviour
 		var targetRotation = Quaternion.LookRotation(Vector3.forward, axes);
 		return Quaternion.Slerp(currentRot, targetRotation, smoothT * Time.deltaTime);
 	}
+
+	public static Component GetComponentByName(GameObject typeHolder, string typeName) => typeHolder.GetComponent(typeName);
 }

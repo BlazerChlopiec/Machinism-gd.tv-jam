@@ -1,38 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceshipColors : MonoBehaviour
+public class SpaceshipColors : ReceiveCustomizedColors
 {
-	public List<SpriteRenderer> sprites;
-
-	[SerializeField] private float flashDuration = .15f;
-
-	public Color desiredColor = Color.green;
+	[SerializeField] protected float flashDuration = .15f;
+	protected bool isFlashActive;
 	public Color flashColor = Color.white;
 
 	bool areInvincibilityFramesActive;
-	bool isFlashActive;
 
 
+	private void Start() => AssignColorsFromTarget("SpaceshipColors");
 
 	private void Update()
 	{
-		if (!areInvincibilityFramesActive && !isFlashActive) SetSpriteColors(desiredColor);
+		if (!areInvincibilityFramesActive && !isFlashActive)
+		{
+			SetSpriteColors(desiredColor);
+			SetParticleColors(desiredColor);
+		}
 
 		// if invincibility frames are currently active and their time runs out, cut them off
 		if (Timers.IsUp("SpaceshipInvFrames") && areInvincibilityFramesActive)
 			areInvincibilityFramesActive = false;
-	}
-
-	public void Flash() => StartCoroutine(nameof(FlashRoutine));
-
-	private IEnumerator FlashRoutine()
-	{
-		isFlashActive = true;
-		SetSpriteColors(flashColor);
-		yield return new WaitForSeconds(flashDuration);
-		isFlashActive = false;
 	}
 
 	public void OnInvincibilityFramesStart()
@@ -44,11 +34,13 @@ public class SpaceshipColors : MonoBehaviour
 		SetSpriteColors(col);
 	}
 
-	private void SetSpriteColors(Color color)
+	public void Flash() => StartCoroutine(nameof(FlashRoutine));
+
+	protected IEnumerator FlashRoutine()
 	{
-		foreach (var sprite in sprites)
-		{
-			sprite.color = new Color(color.r, color.g, color.b, sprite.color.a);
-		}
+		isFlashActive = true;
+		SetSpriteColors(flashColor);
+		yield return new WaitForSeconds(flashDuration);
+		isFlashActive = false;
 	}
 }

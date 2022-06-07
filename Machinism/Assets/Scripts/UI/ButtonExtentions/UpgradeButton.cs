@@ -63,7 +63,7 @@ public class UpgradeButton : MonoBehaviour
 	{
 		SpaceshipMoney.Remove(levelTarget.levels[levelTarget.currentLevel].cost);
 
-		var targetComponent = GetTargettedComponent();
+		var targetComponent = Utils.GetComponentByName(typeHolder: levelTarget.typeHolder, levelTarget.typeName);
 
 		FieldInfo field = Type.GetType(levelTarget.typeName).GetField(levelTarget.floatName);
 		field.SetValue(targetComponent, levelTarget.levels[levelTarget.currentLevel].value);
@@ -74,8 +74,6 @@ public class UpgradeButton : MonoBehaviour
 		FindObjectOfType<ShopCanvas>().DisableAllUpgradeButtons();
 		AudioManager.instance.Play("Buy");
 	}
-
-	private Component GetTargettedComponent() => levelTarget.typeHolder.GetComponent(levelTarget.typeName);
 }
 
 

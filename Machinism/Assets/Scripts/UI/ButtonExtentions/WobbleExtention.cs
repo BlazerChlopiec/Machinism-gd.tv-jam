@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class WobbleOnPointerUp : MonoBehaviour, IPointerUpHandler
+public class WobbleExtention : MonoBehaviour, IPointerUpHandler
 {
 	[SerializeField] private float wobbleSizeMultiplier = 1.5f;
 
