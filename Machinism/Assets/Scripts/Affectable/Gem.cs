@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class Coin : Collectable
+public class Gem : Collectable
 {
 	public override void OnTouch()
 	{
-		MoneyCurrency.instance.Add(10);
+		GemCurrency.instance.Add(1);
 
 		if (collectParticles != null) Instantiate(collectParticles, transform.position, Quaternion.identity);
 

@@ -1,23 +1,15 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class WobbleExtention : MonoBehaviour, IPointerUpHandler
+public class WobbleListener : ButtonListener
 {
 	[SerializeField] private float wobbleSizeMultiplier = 1.5f;
 
-	Button button;
-
-
-	private void Start() => button = GetComponent<Button>();
-
 
 	Vector2 prevScale;
-	public void OnPointerUp(PointerEventData eventData)
+	protected override void NewListener()
 	{
-		if (!button.interactable) return;
-
 		if (prevScale != Vector2.zero)
 		{
 			transform.localScale = prevScale;

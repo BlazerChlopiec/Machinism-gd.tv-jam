@@ -27,7 +27,7 @@ public class ShopMessage : MonoBehaviour
 	{
 		this.hasShownMessage = hasShownMessage;
 
-		var upgrades = FindObjectsOfType<UpgradeButton>(includeInactive: true);
+		var upgrades = FindObjectsOfType<UpgradeButtonListener>(includeInactive: true);
 
 		cheapestTier = int.MaxValue;
 		foreach (var item in upgrades)
@@ -44,7 +44,7 @@ public class ShopMessage : MonoBehaviour
 
 	private void Update()
 	{
-		if (SpaceshipMoney.value >= cheapestTier && !hasShownMessage)
+		if (MoneyCurrency.instance.value >= cheapestTier && !hasShownMessage)
 		{
 			hasShownMessage = true;
 			ShowMessage("Upgrades are available!");

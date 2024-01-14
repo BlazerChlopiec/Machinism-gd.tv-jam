@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class UpgradeButton : MonoBehaviour
+public class UpgradeButtonListener : ButtonListener
 {
 	[Header("The value you want to change has to be public!")]
 	public LevelTarget levelTarget;
@@ -29,7 +29,7 @@ public class UpgradeButton : MonoBehaviour
 		{
 			button.interactable = false;
 		}
-		else if (SpaceshipMoney.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
+		else if (MoneyCurrency.instance.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
 		{
 			button.interactable = false;
 		}
@@ -46,7 +46,7 @@ public class UpgradeButton : MonoBehaviour
 			text.text = "MAX";
 			return;
 		}
-		else if (SpaceshipMoney.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
+		else if (MoneyCurrency.instance.value < levelTarget.levels[levelTarget.currentLevel].cost) // if no money
 		{
 			text.text = levelTarget.levels[levelTarget.currentLevel].levelName + " - "
 					  + levelTarget.levels[levelTarget.currentLevel].cost + "$";
@@ -59,9 +59,9 @@ public class UpgradeButton : MonoBehaviour
 		}
 	}
 
-	public void Upgrade()
+	protected override void NewListener()
 	{
-		SpaceshipMoney.Remove(levelTarget.levels[levelTarget.currentLevel].cost);
+		MoneyCurrency.instance.Remove(levelTarget.levels[levelTarget.currentLevel].cost);
 
 		var targetComponent = Utils.GetComponentByName(typeHolder: levelTarget.typeHolder, levelTarget.typeName);
 

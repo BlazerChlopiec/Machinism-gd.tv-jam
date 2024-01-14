@@ -11,7 +11,7 @@ public class ShopCanvas : DynamicCanvas
 
 		Time.timeScale = 0;
 
-		foreach (var item in GetComponentsInChildren<UpgradeButton>())
+		foreach (var item in GetComponentsInChildren<UpgradeButtonListener>())
 		{
 			item.UpdateInteractability();
 			item.UpdateData();
@@ -31,7 +31,7 @@ public class ShopCanvas : DynamicCanvas
 
 	public void DisableAllUpgradeButtons()
 	{
-		foreach (var item in GetComponentsInChildren<UpgradeButton>())
+		foreach (var item in GetComponentsInChildren<UpgradeButtonListener>())
 		{
 			item.GetComponent<Button>().interactable = false;
 		}
@@ -40,11 +40,11 @@ public class ShopCanvas : DynamicCanvas
 	public bool HasAvailableUpgrades()
 	{
 		var hasAvailableUpgrades = false;
-		var upgrades = FindObjectsOfType<UpgradeButton>(includeInactive: true);
+		var upgrades = FindObjectsOfType<UpgradeButtonListener>(includeInactive: true);
 
 		foreach (var x in upgrades)
 		{
-			if (x.levelTarget.currentLevel != x.levelTarget.levels.Count && x.levelTarget.levels[x.levelTarget.currentLevel].cost <= SpaceshipMoney.value)
+			if (x.levelTarget.currentLevel != x.levelTarget.levels.Count && x.levelTarget.levels[x.levelTarget.currentLevel].cost <= MoneyCurrency.instance.value)
 			{
 				hasAvailableUpgrades = true;
 			}

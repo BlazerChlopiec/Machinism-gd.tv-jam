@@ -2,12 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class SetCustomColorFromButtonColorExtention : MonoBehaviour
+public class SetCustomColorFromButtonColorListener : ButtonListener
 {
 	[SerializeField] private string targetIdentifier;
 
-
-	public void SetColorToTarget()
+	protected override void NewListener()
 	{
 		var colorManager = FindObjectOfType<CustomizedColorsManager>();
 		if (colorManager == null)

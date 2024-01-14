@@ -23,6 +23,6 @@ public class Transition : MonoBehaviour
 		SpaceshipHealth.maxHealth = 3;
 		SpaceshipHealth.OnDeath = null;
 		SpaceshipHealth.OnRefil = null;
-		SpaceshipMoney.Remove(SpaceshipMoney.value);
+		if (MoneyCurrency.instance != null) MoneyCurrency.instance.Remove(MoneyCurrency.instance.value);
 	}
 }

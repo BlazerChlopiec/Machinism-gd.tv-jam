@@ -121,8 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 614341964089662913}
-  - component: {fileID: 5582275760848424993}
   - component: {fileID: 2090810874039771511}
+  - component: {fileID: 5582275760848424993}
   m_Layer: 7
   m_Name: Meteor
   m_TagString: Enemy
@@ -145,22 +145,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5582275760848424993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 614341964089662912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e54c20bd7df06b4c89d8a450ad226d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coin: {fileID: 4363887088673029044, guid: 5584db1f52c936f42a728462fbcba6f3, type: 3}
-  deathParticles: {fileID: 7367032861138849451, guid: f21d9c06dd0d5d64ba7e94f8af64cba9, type: 3}
-  health: 2
-  fallSpeed: 3
 --- !u!58 &2090810874039771511
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,3 +161,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.1
+--- !u!114 &5582275760848424993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614341964089662912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e54c20bd7df06b4c89d8a450ad226d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coin: {fileID: 4363887088673029044, guid: 5584db1f52c936f42a728462fbcba6f3, type: 3}
+  deathParticles: {fileID: 7367032861138849451, guid: f21d9c06dd0d5d64ba7e94f8af64cba9, type: 3}
+  health: 2
+  fallSpeed: 3

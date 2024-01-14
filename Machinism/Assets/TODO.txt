@@ -8,15 +8,14 @@ TODO:
 - bosses (enemies that spawn after a certain time (ex. 5 mins) and disable other enemy spawns after they're destroyed they drop gem currency)
 - rework the main menu (on phone you probably dont use lmb to shoot lol)
 - rework the speed, size of bullets
-- implement the customization
-- make the meteors in the menu a particle system
+- change the structure (maybe the spaceshipcolors should inherit from spriteflasheffect)
+- ship customization (different ship models)
+- add new button animations (pointer down, pointer up)
 
-- color script for enemies
-- rework sprite flash (make it work the same for the player and the enemies)
 
 Idk:
 - add the focus mechanic (using the breaks slows down all enemies on screen and their bullets)
-- add hitStop effects when hit enemy
+- add hitStop effects when got hit
 - add a Time.timeScale controller script
 - timed speed booster affectable item
 - timed money booster affectable item
@@ -27,7 +26,7 @@ Not needed but yeayesyse:
 Android port:
 - add gem currecy (added for killing specific enemies, surviving for a long time or getting an achievement)
 - add cloud saving
-- add a gem currency shop (customization purposes - colors, strobe lights, laser light, shoot origins, patterns)
+- add a gem currency shop (customization purposes - colors, strobe lights, laser light, shoot origins, patterns, spaceship models (gotta have that millenium falcon ref lmao))
 
 Misc:
 - better timer code that allows for unidentifiable timers (the ones that are just created and never referenced)
@@ -79,3 +78,5 @@ DONE:
 - color functionality for particle effects
 - add button extentions
 - added colorpick buttons
+- implement the customization
+- make the meteors in the menu a particle system

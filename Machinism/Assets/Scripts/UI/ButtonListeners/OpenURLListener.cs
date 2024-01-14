@@ -1,13 +1,12 @@
 using UnityEngine;
 using System.Runtime.InteropServices;
-using UnityEngine.EventSystems;
 
-public class OpenURLExtention : MonoBehaviour, IPointerDownHandler
+public class OpenURLListener : ButtonListener
 {
 	[SerializeField] private string URL;
 
 
-	public void OnPointerDown(PointerEventData eventData) => OpenLink(URL);
+	protected override void NewListener() => OpenLink(URL);
 
 	public static void OpenLink(string url)
 	{

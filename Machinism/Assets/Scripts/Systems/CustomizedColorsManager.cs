@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CustomizedColorsManager : MonoSingleton<CustomizedColorsManager>
 {
-	public List<StartColorChange> startColorChanges;
+	public List<StartColorChange> externalColorChanges;
 
 
 	public Color GetColorFromIdentifier(string identifier)
 	{
 		Color color = Color.clear;
 
-		foreach (var changes in startColorChanges)
+		foreach (var changes in externalColorChanges)
 		{
 			if (changes.identifier == identifier)
 			{
@@ -24,7 +24,7 @@ public class CustomizedColorsManager : MonoSingleton<CustomizedColorsManager>
 
 	public void SetColorToTarget(string identifier, Color targetColor)
 	{
-		foreach (var changes in startColorChanges)
+		foreach (var changes in externalColorChanges)
 		{
 			if (changes.identifier == identifier)
 			{
